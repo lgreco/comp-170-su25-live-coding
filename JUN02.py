@@ -2,14 +2,24 @@
 # Functions, booleans, lists, and dictionaries
 
 def form_letter(recipient, promise):
+    """Prints a form letter for an aspiring local politician, thanking their voters
+    and promising things.
+
+    Inputs
+    ------
+    recipient : string
+      The name of the voter the letter is sent to
+    promise : string
+      The promise to the voter
+    """
     print("Dear " + recipient + ",")
     print("Thank you for voting for me.")
     print("I promise to ")
     print(promise)
     print()
-    print()
 
-# Naive dictionary - not the best idea
+# Simplistic dictionary to demonstrate the concept. Using first names as keys in 
+# a dictionary is not a good idea. Keys must be unique and names are not.
 
 my_voters = {
     "Richard" : "build a park in your backyard",
