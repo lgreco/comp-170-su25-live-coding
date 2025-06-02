@@ -1,3 +1,6 @@
+# Leo specific: nfs_ not for sharing
+nfs_*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
