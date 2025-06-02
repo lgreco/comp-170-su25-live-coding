@@ -9,6 +9,8 @@ def form_letter(recipient, promise):
     print()
     print()
 
+# Naive dictionary - not the best idea
+
 my_voters = {
     "Richard" : "build a park in your backyard",
     "Lula"    : "fix your sidewalk",
