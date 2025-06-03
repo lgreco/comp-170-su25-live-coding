@@ -10,7 +10,7 @@ def f(x: int) -> int:
     
     Returns
     -------
-    x*x : int
+    int
       the number squared
     """
     return x * x
