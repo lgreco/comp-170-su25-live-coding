@@ -11,13 +11,6 @@ def f(x: int) -> int:
     Returns
     -------
     x*x : int
-      the number squared"""
-    return ( x*x )
-
-
-
-# Basic function
-def g(x):
-    return x*x
-
-print(f(2.5))
+      the number squared
+    """
+    return x * x
