@@ -7,7 +7,7 @@ print(f"Thank you. I'll parameterize the tower for {N} lines height.")
 
 # The aspect ratio of the Sears Tower 1:6.45 based on Chicago Architectural 
 # Foundation. In other words, the tower is 6.45 times taller than wide
-ASPECT_RATIO = 1/6.45 
+ASPECT_RATIO = 6.45 
 
 # The tower has actually four tiers but for simplicity we assume there are
 # three tiers, each occupying the following proportons of the total height
@@ -16,8 +16,8 @@ MIDDLE_TIER_PROPORTION = 0.35 # measurements and
 TOP_TIER_PROPORTION = 0.15    # omitting one setback
 
 # These are the setback transitions for the three tiers of our tower
-BOTTOM_TO_MIDDLE_SETBACK = 0.33
-MIDDLE_TO_TOP_SETBACK = 0.25
+BOTTOM_TO_MIDDLE_SETBACK = 0.75
+MIDDLE_TO_TOP_SETBACK = 0.66
 
 # Time to compute the dimensions for each block in the tower
 
