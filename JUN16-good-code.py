@@ -7,34 +7,41 @@ def average(values: list[int]) -> int:
     Input
     -----
     values : list
-      values to average - must be numeric data
+      values to average - must be numeric data. Dear user, please please please
+      make sure that the list is not empty.
     
     Returns
     -------
     The average of the values entered.
     """
-    # Initialize the sum accumulator
-    sum = 0
-    
-    # Iterate the list (traverse it one element at a time from beginning to end)
-    # and add its values together.      ALTERNATIVELY, with ENHANCED-FOR loop:
-    for i in range(len(values)):        # for val in values:
-        sum = sum + values[i]           #     sum = sum + val
 
-    # Loop completed, compute average by dividing sum computed in the loop with
-    # the number of values -- that's the length of the array. This operation
-    # can be risky. Why? 
-    avg = sum / len(values)
+    # initialize average to None
+    avg = None
+    
+    if len(values) > 0:
+        
+      # Initialize the sum accumulator
+      sum = 0
+      
+      # Iterate the list (traverse it one element at a time from beginning to end)
+      # and add its values together.      ALTERNATIVELY, with ENHANCED-FOR loop:
+      for i in range(len(values)):        # for val in values:
+          sum = sum + values[i]           #     sum = sum + val
+
+      # Loop completed, compute average by dividing sum computed in the loop with
+      # the number of values -- that's the length of the array. This operation
+      # can be risky. Why? 
+      avg = sum / len(values)
 
     # Done. Return the average value
     return avg
 
 # Simple demo
-average_daily_high = average(daily_highs)
+# average_daily_high = average(daily_highs)
 # Plain printing
-print(average_daily_high)
+# print(average_daily_high)
 # Fancy printing
-print(f"{average_daily_high:.1f}")
+# print(f"{average_daily_high:.1f}")
 
 
 def find_min(values: list[int]) -> int:
@@ -63,5 +70,50 @@ def find_min(values: list[int]) -> int:
     # Done
     return smallest
 
-# Simple demo
-print(f"The smallest daily high temperatue is {find_min(daily_highs)}")
+def find_max(values: list[int]) -> int:
+    """Basic technique to find the largest item in an list. 
+    This method uses a WHILE loop to demonstreate its equivalence
+    to an exhaustive FOR loop
+    
+    Input
+    -----
+    values : list
+      values to search - must be numeric data
+    
+    Returns
+    -------
+    The largest of the values entered. 
+    """
+    # Assume that the first item in the list is the largest
+    
+    i = 0
+    largest = values[i]
+
+    # Check every remaining item in the list if they are smaller than the
+    # largest value. When a smaller item is found, update the largest
+    # value to match. Loop stars from second element [i=1]. Why?
+    while i < len(values):
+        if values[i] > largest:
+            largest = values[i]
+        i = i+1
+    
+    # Done
+    return largest
+
+def exists(value: int, values: list[int]) -> bool:
+    """
+    for i in range(len(values)):
+        if values[i] == value:
+            return True
+    return False
+    """
+    # Assume that the item is not present in the array
+    found = False
+    for val in values:
+        if val == value:
+            found = True
+            break
+    return found
+
+demo = [1,2,3]
+print(find_max(demo))
