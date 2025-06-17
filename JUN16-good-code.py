@@ -112,7 +112,7 @@ def exists(value: int, values: list[int]) -> bool:
     for val in values:
         if val == value:
             found = True
-            break
+            break # DO NOT!
     return found
 
 demo = [1,2,3]
