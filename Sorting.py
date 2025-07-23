@@ -17,6 +17,28 @@ def naive_sorting(our_data: list[int]):
         our_data[end - 1] = temp
     return our_data
 
+def merge(A:list[int], B:list[int]) -> list[int]:
+    # Leftmost pointers for lists A and B
+    i = j = 0
+    # Output list
+    C = list()
+    while i < len(A) and j < len(B):
+        if A[i] < B[j]:
+            C.append(A[i])
+            i += 1
+        else:
+            C.append(B[j])
+            j += 1
+    while i < len(A):
+        C.append(A[i])
+        i += 1
+    while j < len(B):
+        C.append(B[j])
+        j += 1
+    return C
+
+
 #  test
-demo = [9,4,3,8,7,1,6,2]
-print(naive_sorting(demo))
+A = [1,7,8,9]
+B = [0,4,5,6]
+print(naive_sorting(merge(A,B)))
