@@ -37,8 +37,26 @@ def merge(A:list[int], B:list[int]) -> list[int]:
         j += 1
     return C
 
+def merge_sort(array:list[int]) -> list[int]:
+    result = list()
+    if len(array) == 1:
+        result.append(array[0])
+    else:
+        # Split input array in half
+        mid = len(array) // 2
+        left = list()
+        right = list()
+        for i in range(mid):
+            left.append(array[i])
+        for i in range(mid,len(array)):
+            right.append(array[i])
+        try_again_left = merge_sort(left)
+        try_again_right = merge_sort(right)
+        result = merge(try_again_left, try_again_right)
+    return result
 
-#  test
-A = [1,7,8,9]
-B = [0,4,5,6]
-print(naive_sorting(merge(A,B)))
+
+# test 
+array = [5,1,6,2,8,4,7,3]
+sorted_array = merge_sort(array)
+print(sorted_array)
